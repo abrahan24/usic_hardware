@@ -1,4 +1,4 @@
-package usic.hardware.service;
+package usic.hardware.models.service;
 import java.util.List;
 
 import usic.hardware.models.entity.Cargo;
