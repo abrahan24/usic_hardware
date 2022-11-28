@@ -1,11 +1,17 @@
 package usic.hardware.models.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -24,4 +30,13 @@ public class Unidad implements Serializable{
     private long id_unidad;
     private String unidad_nom;
     private String estado_unidad;
+
+    //Tabla Predio
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_predio")
+    private Predio predio;
+
+    // Lista Personas
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "unidad", fetch = FetchType.LAZY)
+	private List<Persona> personas;
 }

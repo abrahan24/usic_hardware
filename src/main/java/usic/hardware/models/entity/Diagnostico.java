@@ -1,11 +1,15 @@
 package usic.hardware.models.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -26,4 +30,12 @@ public class Diagnostico implements Serializable{
     private String conclusion;
     private String estado_diagnostico;
     
+
+    //Tabla Persona
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "diagnostico", fetch = FetchType.LAZY)
+	private List<DetalleFalla> detalleFallas;
+
+    //Lista Solicitudes de Servicio
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "diagnostico", fetch = FetchType.LAZY)
+    private List<SolicitudServicio> solicitudServicios;
 }

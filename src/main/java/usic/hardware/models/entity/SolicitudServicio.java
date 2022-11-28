@@ -3,9 +3,12 @@ package usic.hardware.models.entity;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -24,4 +27,24 @@ public class SolicitudServicio implements Serializable{
     private long id_solicitudservicio;
     private String estado_soli_servicio;
     
+
+    //Tabla Persona
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_persona")
+    private Persona persona;
+
+    //Tabla Tecnico Colaborador
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_tecnico_colaborador")
+    private TecnicoColaborador tecnicoColaborador;
+
+    //Tabla Predio
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_predio")
+    private Predio predio;
+
+    //Tabla Diagnostico
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_diagnostico")
+    private Diagnostico diagnostico;
 }
