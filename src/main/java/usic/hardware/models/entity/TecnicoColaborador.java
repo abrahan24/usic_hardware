@@ -21,7 +21,7 @@ import lombok.Setter;
 @Getter
 public class TecnicoColaborador implements Serializable{
 
-    private static final Long serialVersionUID = 2629195288020321924L;
+    private static final long serialVersionUID = 2629195288020321924L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,7 +32,7 @@ public class TecnicoColaborador implements Serializable{
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "tecnicoColaborador", fetch = FetchType.LAZY)
     private List<Usuario> usuarios;
 
-    //Lista Usuario 
+    //Lista Solicitud Servicio
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "tecnicoColaborador", fetch = FetchType.LAZY)
     private List<SolicitudServicio> solicitudServicios;
     

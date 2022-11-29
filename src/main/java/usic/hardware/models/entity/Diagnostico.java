@@ -24,7 +24,7 @@ public class Diagnostico implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_diagnostico;
+    private Long id_diagnostico;
     private String observacion;
     private String recomendacion;
     private String conclusion;

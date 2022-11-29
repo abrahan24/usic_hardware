@@ -27,7 +27,7 @@ public class Unidad implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_unidad;
+    private Long id_unidad;
     private String unidad_nom;
     private String estado_unidad;
 

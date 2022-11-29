@@ -27,7 +27,7 @@ public class TipoEquipo implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_tipoequipo;
+    private Long id_tipoequipo;
     private String tipoequipo_nom;
     private String estado_tipoequipo;
 
@@ -42,6 +42,6 @@ public class TipoEquipo implements Serializable{
     private Persona persona;
 
     //Lista Solicitud de servicio
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tipoequipo", fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tipoEquipo", fetch = FetchType.LAZY)
     private List<SolicitudServicio> solicitudServicios;
 }

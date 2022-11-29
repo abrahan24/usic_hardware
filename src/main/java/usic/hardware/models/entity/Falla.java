@@ -25,7 +25,7 @@ public class Falla implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_falla;
+    private Long id_falla;
     private String falla_nom;
     private String estado_falla;
 

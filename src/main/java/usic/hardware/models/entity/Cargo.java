@@ -25,7 +25,7 @@ public class Cargo implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_cargo;
+    private Long id_cargo;
     private String cargo_nom;
     private String estado_cargo;
     

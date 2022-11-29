@@ -27,7 +27,7 @@ public class Persona implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_persona;
+    private Long id_persona;
     private String persona_nom;
     private String ap_paterno;
     private String ap_materno;
@@ -39,7 +39,7 @@ public class Persona implements Serializable{
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_cargo")
     private Cargo cargo;
-    //Tabla Cargo
+    //Tabla Unidad
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_unidad")
     private Unidad unidad;

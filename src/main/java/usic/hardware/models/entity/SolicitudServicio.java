@@ -20,7 +20,7 @@ import lombok.Setter;
 @Getter
 public class SolicitudServicio implements Serializable{
 
-    private static final Long serialVersionUID = 2629195288020321924L;
+    private static final long serialVersionUID = 2629195288020321924L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,4 +47,9 @@ public class SolicitudServicio implements Serializable{
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_diagnostico")
     private Diagnostico diagnostico;
+
+     //Tabla Diagnostico
+     @ManyToOne(fetch = FetchType.LAZY)
+     @JoinColumn(name = "id_tipoequipo")
+     private TipoEquipo tipoEquipo;
 }
