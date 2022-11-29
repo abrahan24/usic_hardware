@@ -20,11 +20,11 @@ import lombok.Setter;
 @Getter
 public class SolicitudServicio implements Serializable{
 
-    private static final long serialVersionUID = 2629195288020321924L;
+    private static final Long serialVersionUID = 2629195288020321924L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_solicitudservicio;
+    private Long id_solicitudservicio;
     private String estado_soli_servicio;
     
 

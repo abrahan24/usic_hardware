@@ -31,5 +31,5 @@ public class Falla implements Serializable{
 
     //Lista Tipo Detalle Falla 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "falla", fetch = FetchType.LAZY)
-    private List<Falla> fallas;
+    private List<DetalleFalla> detalleFallas;
 }

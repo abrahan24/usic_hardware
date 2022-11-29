@@ -3,10 +3,12 @@ package usic.hardware.models.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import usic.hardware.models.dao.IFallaDao;
 import usic.hardware.models.entity.Falla;
 
+@Service
 public class FallaServiceImpl implements IFallaService{
 
     @Autowired
