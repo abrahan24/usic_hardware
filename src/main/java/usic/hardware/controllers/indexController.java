@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping(value = "/index")
+@RequestMapping("/index")
 public class indexController {
 
 
@@ -16,6 +16,13 @@ public class indexController {
     public String Login(Model model ){
 
         return "";
+
+    }
+
+    @RequestMapping(value = "/panel",method = RequestMethod.GET)
+    public String Panel(Model model ){
+
+        return "Index";
 
     }
 }
