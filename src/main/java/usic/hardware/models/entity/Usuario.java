@@ -1,7 +1,9 @@
 package usic.hardware.models.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -9,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -34,8 +37,7 @@ public class Usuario implements Serializable{
     @JoinColumn(name = "id_persona")
     private Persona persona;
 
-    //Tabla Tecnico Colaborador
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_tecnico_colaborador")
-    private TecnicoColaborador tecnicoColaborador;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario", fetch = FetchType.LAZY)
+    private List<TecnicoColaborador> tecnicoColaboradores;
+
 }

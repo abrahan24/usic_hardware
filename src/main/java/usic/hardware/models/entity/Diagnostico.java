@@ -9,6 +9,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -29,11 +31,15 @@ public class Diagnostico implements Serializable{
     private String recomendacion;
     private String conclusion;
     private String estado_diagnostico;
+
+    //Tabla Falla
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_detallefalla")
+    private DetalleFalla detalleFalla;
+
     
 
-    //Tabla Persona
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "diagnostico", fetch = FetchType.LAZY)
-	private List<DetalleFalla> detalleFallas;
+    
 
     //Lista Solicitudes de Servicio
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "diagnostico", fetch = FetchType.LAZY)

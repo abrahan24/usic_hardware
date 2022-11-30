@@ -9,6 +9,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -28,9 +30,11 @@ public class TecnicoColaborador implements Serializable{
     private Long id_tecnico_colaborador;
     private String estado_tec_cola;
 
-    //Lista Usuario 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tecnicoColaborador", fetch = FetchType.LAZY)
-    private List<Usuario> usuarios;
+     //Tabla Tecnico Usuario
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
+
 
     //Lista Solicitud Servicio
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "tecnicoColaborador", fetch = FetchType.LAZY)

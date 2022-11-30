@@ -47,7 +47,7 @@ public class Persona implements Serializable{
 
     //Lista Tipo Equipo 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "persona", fetch = FetchType.LAZY)
-	private List<TipoEquipo> tipoEquipos;
+	private List<Equipo> equipos;
 
     //Lista Usuario
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "persona", fetch = FetchType.LAZY)

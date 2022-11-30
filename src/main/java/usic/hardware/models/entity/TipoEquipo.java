@@ -31,17 +31,9 @@ public class TipoEquipo implements Serializable{
     private String tipoequipo_nom;
     private String estado_tipoequipo;
 
-    //Tabla Equipo Equipo
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_equipo")
-    private Equipo equipo;
-
-    //Tabla Equipo Equipo
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_persona")
-    private Persona persona;
-
-    //Lista Solicitud de servicio
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "tipoEquipo", fetch = FetchType.LAZY)
-    private List<SolicitudServicio> solicitudServicios;
+	private List<Equipo> equipos;
 }
+
+
+

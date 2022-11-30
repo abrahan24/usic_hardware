@@ -10,6 +10,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -36,6 +38,15 @@ public class Equipo implements Serializable{
     @DateTimeFormat( pattern = "yyyy-MM-dd")
     private Date fecha_adquisicion;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "equipo", fetch = FetchType.LAZY)
-	private List<TipoEquipo> tipoEquipos;
+     //Tabla Tipo Equipo
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_tipoequipo")
+    private TipoEquipo tipoEquipo;
+    
+    //Tabla Tipo Equipo
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_persona")
+    private Persona persona;
+        
+
 }
