@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -28,8 +29,14 @@ public class Usuario implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_usuario;
+
+    @Column(length = 10)
     private String usuario_nom;
+
+    @Column(length = 10)
     private String contrasena;
+
+    @Column(length = 1)
     private String estado_usu;
 
     //Tabla Persona

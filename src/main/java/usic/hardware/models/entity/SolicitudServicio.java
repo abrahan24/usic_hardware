@@ -2,6 +2,7 @@ package usic.hardware.models.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -25,6 +26,8 @@ public class SolicitudServicio implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_solicitudservicio;
+
+    @Column(length = 1)
     private String estado_soli_servicio;
     
 

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -28,11 +29,18 @@ public class TipoEquipo implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_tipoequipo;
+
+    @Column(length = 25, nullable = true)
     private String tipoequipo_nom;
+
+    @Column(length = 1, nullable = true)
     private String estado_tipoequipo;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "tipoEquipo", fetch = FetchType.LAZY)
 	private List<Equipo> equipos;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tipoEquipo", fetch = FetchType.LAZY)
+    private List<Falla> fallas;
 }
 
 

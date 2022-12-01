@@ -17,7 +17,7 @@ public class PredioController {
     private IPredioService predioService;
 
     @RequestMapping(value = "/add_Predio",method = RequestMethod.GET)
-    public String add_Cargo(Model model){
+    public String add_Predio(Model model){
     model.addAttribute("predio", new Predio());
         return "Add_Predio";
     }

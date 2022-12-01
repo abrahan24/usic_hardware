@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -28,11 +29,23 @@ public class Persona implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_persona;
+
+    @Column(length = 25,nullable = true)
     private String persona_nom;
+
+    @Column(length = 25)
     private String ap_paterno;
+
+    @Column(length = 25)
     private String ap_materno;
+
+    @Column(length = 15)
     private String num_celular;
+
+    @Column(length = 1,nullable = true)
     private String genero;
+
+    @Column(length = 1)
     private String estado_per;
 
     //Tabla Cargo

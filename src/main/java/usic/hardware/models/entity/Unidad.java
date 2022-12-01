@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -28,7 +29,11 @@ public class Unidad implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_unidad;
+
+    @Column(length = 60)
     private String unidad_nom;
+
+    @Column(length = 1)
     private String estado_unidad;
 
     //Tabla Predio
